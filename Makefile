@@ -4,4 +4,6 @@ antlr:
 
 .PHONY: compile
 compile:
-	javac -cp ./antlr4.jar generated/*.java
+	[ -d "./target/" ] && rm -v -f ./target/* || mkdir ./target/
+	echo "Compiling..."
+	javac -verbose -d ./target/ -cp ./antlr4.jar generated/*.java
