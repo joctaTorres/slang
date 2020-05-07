@@ -1,5 +1,5 @@
-.PHONY: antlr
-antlr:
+.PHONY: generate
+generate:
 	java -jar ./antlr4.jar $(GRAMMAR_FILE) -o generated
 
 .PHONY: compile
