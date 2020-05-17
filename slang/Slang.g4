@@ -65,26 +65,26 @@ exprList
  ;
 
 expression
- : '-' expression                                       #unaryMinusExpression
- | '!' expression                                       #notExpression
- | <assoc=right> expression '^' expression              #powerExpression
- | expression op=( '*' | '/' | '%' ) expression         #multExpression
- | expression op=( '+' | '-' ) expression               #addExpression
- | expression op=( '>=' | '<=' | '>' | '<' ) expression #compExpression
- | expression op=( '==' | '!=' ) expression             #eqExpression
- | expression '&&' expression                           #andExpression
- | expression '||' expression                           #orExpression
- | expression '?' expression ':' expression             #ternaryExpression
- | expression In expression                             #inExpression
- | Number                                               #numberExpression
- | Bool                                                 #boolExpression
- | Null                                                 #nullExpression
- | functionCall indexes?                                #functionCallExpression
- | list indexes?                                        #listExpression
- | Identifier indexes?                                  #identifierExpression
- | String indexes?                                      #stringExpression
- | '(' expression ')' indexes?                          #expressionExpression
- | Input '(' String? ')'                                #inputExpression
+ : '-' expression
+ | '!' expression
+ | <assoc=right> expression '^' expression
+ | expression op=( '*' | '/' | '%' ) expression
+ | expression op=( '+' | '-' ) expression
+ | expression op=( '>=' | '<=' | '>' | '<' ) expression
+ | expression op=( '==' | '!=' ) expression
+ | expression '&&' expression
+ | expression '||' expression
+ | expression '?' expression ':' expression
+ | expression In expression
+ | Number
+ | Bool
+ | Null
+ | functionCall indexes?
+ | list indexes?
+ | Identifier indexes?
+ | String indexes?
+ | '(' expression ')' indexes?
+ | Input '(' String? ')'                                
  ;
 
 list

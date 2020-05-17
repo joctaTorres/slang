@@ -1148,352 +1148,59 @@ public class SlangParser extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
-		public ExpressionContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
+		public Token op;
+		public TerminalNode Subtract() { return getToken(SlangParser.Subtract, 0); }
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
 		}
-		@Override public int getRuleIndex() { return RULE_expression; }
-	 
-		public ExpressionContext() { }
-		public void copyFrom(ExpressionContext ctx) {
-			super.copyFrom(ctx);
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
-	}
-	public static class BoolExpressionContext extends ExpressionContext {
-		public TerminalNode Bool() { return getToken(SlangParser.Bool, 0); }
-		public BoolExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterBoolExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitBoolExpression(this);
-		}
-	}
-	public static class NumberExpressionContext extends ExpressionContext {
-		public TerminalNode Number() { return getToken(SlangParser.Number, 0); }
-		public NumberExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterNumberExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitNumberExpression(this);
-		}
-	}
-	public static class IdentifierExpressionContext extends ExpressionContext {
-		public TerminalNode Identifier() { return getToken(SlangParser.Identifier, 0); }
-		public IndexesContext indexes() {
-			return getRuleContext(IndexesContext.class,0);
-		}
-		public IdentifierExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterIdentifierExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitIdentifierExpression(this);
-		}
-	}
-	public static class NotExpressionContext extends ExpressionContext {
 		public TerminalNode Excl() { return getToken(SlangParser.Excl, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public NotExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterNotExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitNotExpression(this);
-		}
-	}
-	public static class OrExpressionContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode Or() { return getToken(SlangParser.Or, 0); }
-		public OrExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterOrExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitOrExpression(this);
-		}
-	}
-	public static class UnaryMinusExpressionContext extends ExpressionContext {
-		public TerminalNode Subtract() { return getToken(SlangParser.Subtract, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public UnaryMinusExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterUnaryMinusExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitUnaryMinusExpression(this);
-		}
-	}
-	public static class PowerExpressionContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode Pow() { return getToken(SlangParser.Pow, 0); }
-		public PowerExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterPowerExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitPowerExpression(this);
-		}
-	}
-	public static class EqExpressionContext extends ExpressionContext {
-		public Token op;
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode Equals() { return getToken(SlangParser.Equals, 0); }
-		public TerminalNode NEquals() { return getToken(SlangParser.NEquals, 0); }
-		public EqExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterEqExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitEqExpression(this);
-		}
-	}
-	public static class AndExpressionContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode And() { return getToken(SlangParser.And, 0); }
-		public AndExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterAndExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitAndExpression(this);
-		}
-	}
-	public static class InExpressionContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode In() { return getToken(SlangParser.In, 0); }
-		public InExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterInExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitInExpression(this);
-		}
-	}
-	public static class StringExpressionContext extends ExpressionContext {
-		public TerminalNode String() { return getToken(SlangParser.String, 0); }
-		public IndexesContext indexes() {
-			return getRuleContext(IndexesContext.class,0);
-		}
-		public StringExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterStringExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitStringExpression(this);
-		}
-	}
-	public static class ExpressionExpressionContext extends ExpressionContext {
-		public TerminalNode OParen() { return getToken(SlangParser.OParen, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public TerminalNode CParen() { return getToken(SlangParser.CParen, 0); }
-		public IndexesContext indexes() {
-			return getRuleContext(IndexesContext.class,0);
-		}
-		public ExpressionExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterExpressionExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitExpressionExpression(this);
-		}
-	}
-	public static class AddExpressionContext extends ExpressionContext {
-		public Token op;
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode Add() { return getToken(SlangParser.Add, 0); }
-		public TerminalNode Subtract() { return getToken(SlangParser.Subtract, 0); }
-		public AddExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterAddExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitAddExpression(this);
-		}
-	}
-	public static class CompExpressionContext extends ExpressionContext {
-		public Token op;
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode GTEquals() { return getToken(SlangParser.GTEquals, 0); }
-		public TerminalNode LTEquals() { return getToken(SlangParser.LTEquals, 0); }
-		public TerminalNode GT() { return getToken(SlangParser.GT, 0); }
-		public TerminalNode LT() { return getToken(SlangParser.LT, 0); }
-		public CompExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterCompExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitCompExpression(this);
-		}
-	}
-	public static class NullExpressionContext extends ExpressionContext {
+		public TerminalNode Number() { return getToken(SlangParser.Number, 0); }
+		public TerminalNode Bool() { return getToken(SlangParser.Bool, 0); }
 		public TerminalNode Null() { return getToken(SlangParser.Null, 0); }
-		public NullExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterNullExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitNullExpression(this);
-		}
-	}
-	public static class FunctionCallExpressionContext extends ExpressionContext {
 		public FunctionCallContext functionCall() {
 			return getRuleContext(FunctionCallContext.class,0);
 		}
 		public IndexesContext indexes() {
 			return getRuleContext(IndexesContext.class,0);
 		}
-		public FunctionCallExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterFunctionCallExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitFunctionCallExpression(this);
-		}
-	}
-	public static class MultExpressionContext extends ExpressionContext {
-		public Token op;
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode Multiply() { return getToken(SlangParser.Multiply, 0); }
-		public TerminalNode Divide() { return getToken(SlangParser.Divide, 0); }
-		public TerminalNode Modulus() { return getToken(SlangParser.Modulus, 0); }
-		public MultExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterMultExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitMultExpression(this);
-		}
-	}
-	public static class ListExpressionContext extends ExpressionContext {
 		public ListContext list() {
 			return getRuleContext(ListContext.class,0);
 		}
-		public IndexesContext indexes() {
-			return getRuleContext(IndexesContext.class,0);
-		}
-		public ListExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterListExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitListExpression(this);
-		}
-	}
-	public static class TernaryExpressionContext extends ExpressionContext {
-		public List<ExpressionContext> expression() {
-			return getRuleContexts(ExpressionContext.class);
-		}
-		public ExpressionContext expression(int i) {
-			return getRuleContext(ExpressionContext.class,i);
-		}
-		public TerminalNode QMark() { return getToken(SlangParser.QMark, 0); }
-		public TerminalNode Colon() { return getToken(SlangParser.Colon, 0); }
-		public TernaryExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterTernaryExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitTernaryExpression(this);
-		}
-	}
-	public static class InputExpressionContext extends ExpressionContext {
-		public TerminalNode Input() { return getToken(SlangParser.Input, 0); }
+		public TerminalNode Identifier() { return getToken(SlangParser.Identifier, 0); }
+		public TerminalNode String() { return getToken(SlangParser.String, 0); }
 		public TerminalNode OParen() { return getToken(SlangParser.OParen, 0); }
 		public TerminalNode CParen() { return getToken(SlangParser.CParen, 0); }
-		public TerminalNode String() { return getToken(SlangParser.String, 0); }
-		public InputExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		public TerminalNode Input() { return getToken(SlangParser.Input, 0); }
+		public TerminalNode Pow() { return getToken(SlangParser.Pow, 0); }
+		public TerminalNode Multiply() { return getToken(SlangParser.Multiply, 0); }
+		public TerminalNode Divide() { return getToken(SlangParser.Divide, 0); }
+		public TerminalNode Modulus() { return getToken(SlangParser.Modulus, 0); }
+		public TerminalNode Add() { return getToken(SlangParser.Add, 0); }
+		public TerminalNode GTEquals() { return getToken(SlangParser.GTEquals, 0); }
+		public TerminalNode LTEquals() { return getToken(SlangParser.LTEquals, 0); }
+		public TerminalNode GT() { return getToken(SlangParser.GT, 0); }
+		public TerminalNode LT() { return getToken(SlangParser.LT, 0); }
+		public TerminalNode Equals() { return getToken(SlangParser.Equals, 0); }
+		public TerminalNode NEquals() { return getToken(SlangParser.NEquals, 0); }
+		public TerminalNode And() { return getToken(SlangParser.And, 0); }
+		public TerminalNode Or() { return getToken(SlangParser.Or, 0); }
+		public TerminalNode QMark() { return getToken(SlangParser.QMark, 0); }
+		public TerminalNode Colon() { return getToken(SlangParser.Colon, 0); }
+		public TerminalNode In() { return getToken(SlangParser.In, 0); }
+		public ExpressionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_expression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterInputExpression(this);
+			if ( listener instanceof SlangListener ) ((SlangListener)listener).enterExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitInputExpression(this);
+			if ( listener instanceof SlangListener ) ((SlangListener)listener).exitExpression(this);
 		}
 	}
 
@@ -1518,10 +1225,6 @@ public class SlangParser extends Parser {
 			switch ( getInterpreter().adaptivePredict(_input,19,_ctx) ) {
 			case 1:
 				{
-				_localctx = new UnaryMinusExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-
 				setState(167);
 				match(Subtract);
 				setState(168);
@@ -1530,9 +1233,6 @@ public class SlangParser extends Parser {
 				break;
 			case 2:
 				{
-				_localctx = new NotExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(169);
 				match(Excl);
 				setState(170);
@@ -1541,36 +1241,24 @@ public class SlangParser extends Parser {
 				break;
 			case 3:
 				{
-				_localctx = new NumberExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(171);
 				match(Number);
 				}
 				break;
 			case 4:
 				{
-				_localctx = new BoolExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(172);
 				match(Bool);
 				}
 				break;
 			case 5:
 				{
-				_localctx = new NullExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(173);
 				match(Null);
 				}
 				break;
 			case 6:
 				{
-				_localctx = new FunctionCallExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(174);
 				functionCall();
 				setState(176);
@@ -1587,9 +1275,6 @@ public class SlangParser extends Parser {
 				break;
 			case 7:
 				{
-				_localctx = new ListExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(178);
 				list();
 				setState(180);
@@ -1606,9 +1291,6 @@ public class SlangParser extends Parser {
 				break;
 			case 8:
 				{
-				_localctx = new IdentifierExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(182);
 				match(Identifier);
 				setState(184);
@@ -1625,9 +1307,6 @@ public class SlangParser extends Parser {
 				break;
 			case 9:
 				{
-				_localctx = new StringExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(186);
 				match(String);
 				setState(188);
@@ -1644,9 +1323,6 @@ public class SlangParser extends Parser {
 				break;
 			case 10:
 				{
-				_localctx = new ExpressionExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(190);
 				match(OParen);
 				setState(191);
@@ -1667,9 +1343,6 @@ public class SlangParser extends Parser {
 				break;
 			case 11:
 				{
-				_localctx = new InputExpressionContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
 				setState(196);
 				match(Input);
 				setState(197);
@@ -1703,7 +1376,7 @@ public class SlangParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
 					case 1:
 						{
-						_localctx = new PowerExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(204);
 						if (!(precpred(_ctx, 18))) throw new FailedPredicateException(this, "precpred(_ctx, 18)");
@@ -1715,15 +1388,15 @@ public class SlangParser extends Parser {
 						break;
 					case 2:
 						{
-						_localctx = new MultExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(207);
 						if (!(precpred(_ctx, 17))) throw new FailedPredicateException(this, "precpred(_ctx, 17)");
 						setState(208);
-						((MultExpressionContext)_localctx).op = _input.LT(1);
+						((ExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Multiply) | (1L << Divide) | (1L << Modulus))) != 0)) ) {
-							((MultExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+							((ExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1736,15 +1409,15 @@ public class SlangParser extends Parser {
 						break;
 					case 3:
 						{
-						_localctx = new AddExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(210);
 						if (!(precpred(_ctx, 16))) throw new FailedPredicateException(this, "precpred(_ctx, 16)");
 						setState(211);
-						((AddExpressionContext)_localctx).op = _input.LT(1);
+						((ExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==Add || _la==Subtract) ) {
-							((AddExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+							((ExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1757,15 +1430,15 @@ public class SlangParser extends Parser {
 						break;
 					case 4:
 						{
-						_localctx = new CompExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(213);
 						if (!(precpred(_ctx, 15))) throw new FailedPredicateException(this, "precpred(_ctx, 15)");
 						setState(214);
-						((CompExpressionContext)_localctx).op = _input.LT(1);
+						((ExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << GTEquals) | (1L << LTEquals) | (1L << GT) | (1L << LT))) != 0)) ) {
-							((CompExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+							((ExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1778,15 +1451,15 @@ public class SlangParser extends Parser {
 						break;
 					case 5:
 						{
-						_localctx = new EqExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(216);
 						if (!(precpred(_ctx, 14))) throw new FailedPredicateException(this, "precpred(_ctx, 14)");
 						setState(217);
-						((EqExpressionContext)_localctx).op = _input.LT(1);
+						((ExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==Equals || _la==NEquals) ) {
-							((EqExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+							((ExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1799,7 +1472,7 @@ public class SlangParser extends Parser {
 						break;
 					case 6:
 						{
-						_localctx = new AndExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(219);
 						if (!(precpred(_ctx, 13))) throw new FailedPredicateException(this, "precpred(_ctx, 13)");
@@ -1811,7 +1484,7 @@ public class SlangParser extends Parser {
 						break;
 					case 7:
 						{
-						_localctx = new OrExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(222);
 						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
@@ -1823,7 +1496,7 @@ public class SlangParser extends Parser {
 						break;
 					case 8:
 						{
-						_localctx = new TernaryExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(225);
 						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
@@ -1839,7 +1512,7 @@ public class SlangParser extends Parser {
 						break;
 					case 9:
 						{
-						_localctx = new InExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(231);
 						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
