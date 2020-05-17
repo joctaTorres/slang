@@ -21,11 +21,11 @@ assignment
  ;
 
 functionCall
- : Identifier '(' exprList? ')' #identifierFunctionCall
- | Println '(' expression? ')'  #printlnFunctionCall
- | Print '(' expression ')'     #printFunctionCall
- | Assert '(' expression ')'    #assertFunctionCall
- | Size '(' expression ')'      #sizeFunctionCall
+ : Identifier '(' exprList? ')'
+ | Println '(' expression? ')'
+ | Print '(' expression ')'
+ | Assert '(' expression ')'
+ | Size '(' expression ')'
  ;
 
 ifStatement
