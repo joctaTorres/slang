@@ -153,7 +153,7 @@ componentType
    ;
 
 recordType
-   : RECORD fieldList? END
+   : RECORD fieldList? FINISH
    ;
 
 fieldList
@@ -388,7 +388,7 @@ structuredStatement
    ;
 
 compoundStatement
-   : BEGIN statements END
+   : START statements FINISH
    ;
 
 statements
@@ -405,7 +405,7 @@ ifStatement
    ;
 
 caseStatement
-   : CASE expression OF caseListElement (SEMI caseListElement)* (SEMI ELSE statements)? END
+   : CASE expression OF caseListElement (SEMI caseListElement)* (SEMI ELSE statements)? FINISH
    ;
 
 caseListElement
@@ -591,8 +591,8 @@ ARRAY
    ;
 
 
-BEGIN
-   : B E G I N
+START
+   : S T A R T
    ;
 
 
@@ -641,8 +641,8 @@ ELSE
    ;
 
 
-END
-   : E N D
+FINISH
+   : F I N I S H
    ;
 
 
