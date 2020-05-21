@@ -12,7 +12,7 @@ var
 start
    n := 0;
    // loop to show you can use chars to index arrays //
-   for i := 'a' to 'e' do
+   for (i := 'a' to 'e') do
    start
       n := n + 5;
       a[i] := n;                         { cool, huh }

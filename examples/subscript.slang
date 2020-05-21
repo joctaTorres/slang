@@ -13,11 +13,11 @@ var
 // **************************    main      ********************************** //
 
 start
-  for i := startSubscript to endSubscript do
+  for (i := startSubscript to endSubscript) do
      a[i] := i*100;
 
   writeln('The array:');
-  for j := startSubscript to endSubscript do
+  for (j := startSubscript to endSubscript) do
      write (a[j]);
   writeln
 finish.

@@ -33,8 +33,8 @@ declare Sort(input, output);
         ReadArr(size, arr);
 
         // Sort using bubble sort. //
-        FOR i := size - 1 DOWNTO 1 DO
-            FOR j := 1 TO i DO
+        FOR (i := size - 1 DOWNTO 1) DO
+            FOR (j := 1 TO i) DO
                 IF arr[j] > arr[j + 1] THEN START
                     tmp := arr[j];
                     arr[j] := arr[j + 1];
@@ -42,6 +42,6 @@ declare Sort(input, output);
                 FINISH;
 
         // Print. //
-        FOR i := 1 TO size DO
+        FOR (i := 1 TO size) DO
             writeln(arr[i])
     FINISH.

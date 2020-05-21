@@ -77,7 +77,7 @@ var
 
 start
     sum := 0;
-    for i := 1 to grades do
+    for (i := 1 to grades) do
        sum:=sum + newrec^.info[i];
     average:=sum div grades;
 finish;
@@ -93,7 +93,7 @@ var
 start
     new(newrec);
     read(newrec^.id);
-    for i := 1 to grades do
+    for (i := 1 to grades) do
        read(newrec^.info[i]);
     newrec^.info[avgPosition] := average(newrec);
 finish;
@@ -112,21 +112,21 @@ start
     if (list <> nil) then
     start
         write('            ');
-        for i := 1 to grades do
+        for (i := 1 to grades) do
            write('Grade     ');
         writeln;
         write('Student');
-        for i := 1 to grades do
+        for (i := 1 to grades) do
            write(i);
         writeln('        Average');
-        for i := 1 to grades+2 do
+        for (i := 1 to grades+2) do
            write('-----------');
         writeln;
 
         while (current <> nil) do
         start
           write(current^.id);
-          for i := 1 to (grades + 1) do
+          for (i := 1 to (grades + 1)) do
             write(current^.info[i]);
           writeln;
           current:= current^.next;
@@ -159,7 +159,7 @@ finish;
 start
   read(classNum);
   list := nil;
-  for count := 1 to size do
+  for (count := 1 to size) do
   start
     makeNewrec(newrec);
     insert(list, newrec);

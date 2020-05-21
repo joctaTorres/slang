@@ -427,7 +427,7 @@ repeatStatement
    ;
 
 forStatement
-   : FOR identifier ASSIGN forList DO statement
+   : FOR LPAREN identifier ASSIGN forList RPAREN DO statement
    ;
 
 forList

@@ -16,7 +16,7 @@ start
    fact := 1;
    answer := 1;
    if n > 1 then
-      for i := 2 to n do
+      for (i := 2 to n) do
           answer := answer * i;
       fact := answer;
 finish;

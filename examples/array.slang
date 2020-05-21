@@ -12,25 +12,25 @@ var
       i,j,k: integer;
 
 start
-   for i := 1 to 5 do
-      for j := 2 to 3 do
-         for k := 0 to 2 do
+   for (i := 1 to 5) do
+      for (j := 2 to 3) do
+         for (k := 0 to 2) do
              a[i,j,k] := i;
 
-   for i := 0 to 3 do
-      for j := 1 to 5 do
+   for (i := 0 to 3) do
+      for (j := 1 to 5) do
          b[i,j] := i+j;
 
-   for i := 5 downto 1 do
-      for j := 3 downto 2 do start
-         for k := 0 to 2 do
+   for (i := 5 downto 1) do
+      for (j := 3 downto 2) do start
+         for (k := 0 to 2) do
             write(a[i,j,k], ' ');
     writeln;
       finish;
    writeln;
 
-   for i := 0 to 3 do start
-      for j := 1 to 5 do
+   for (i := 0 to 3) do start
+      for (j := 1 to 5) do
          write(b[i,j], ' ');
       writeln;
    finish;

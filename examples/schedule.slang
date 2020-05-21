@@ -138,7 +138,7 @@ declare a1 (input,output);
         START
             write(' ': DaysHeadMoveOver);
 
-            FOR Day := Sun TO Sat DO
+            FOR (Day := Sun TO Sat) DO
                 START
                     write('[ ');
                     WriteDay(output, Day);
@@ -212,8 +212,8 @@ declare a1 (input,output);
             DayScan: DayType;               { Go through the days. }
             HourScan: HourType;             { Go through the hours. }
         START
-            for DayScan := StartDay to FINISHDay do
-                for HourScan := FirstHour to LastHour do
+            for (DayScan := StartDay to FINISHDay) do
+                for (HourScan := FirstHour to LastHour) do
                     Schedule[HourScan, DayScan] := Employee
         FINISH; { SetSchedPart }
 
@@ -315,8 +315,8 @@ declare a1 (input,output);
 
             { Remove! Remove! }
             Found := FALSE;
-            FOR Day := Sun TO Sat DO
-                FOR Hour := FirstHour TO LastHour DO
+            FOR (Day := Sun TO Sat) DO
+                FOR (Hour := FirstHour TO LastHour) DO
                     IF Schedule[Hour, Day] = Employee THEN 
                         START
                             { Remove. }
@@ -359,10 +359,10 @@ declare a1 (input,output);
             readln;
             WriteDaysHeader;
 
-            FOR Hour := FirstHour TO LastHour DO
+            FOR (Hour := FirstHour TO LastHour) DO
                 START
                     write(Map24to12(Hour):2, ':00 ');
-                    FOR Day := Sun TO Sat DO
+                    FOR (Day := Sun TO Sat) DO
                         write(Schedule[Hour, Day], 
                             ' ': TableDayWidth - length(Schedule[Hour, Day]));
                     writeln
@@ -390,8 +390,8 @@ declare a1 (input,output);
 
             { Do the sum. }
             Total := 0;
-            FOR Day := Sun TO Sat DO
-                FOR Hour := FirstHour TO LastHour DO
+            FOR (Day := Sun TO Sat) DO
+                FOR (Hour := FirstHour TO LastHour) DO
                     IF Schedule[Hour, Day] = Employee THEN
                         Total := Total + 1;
 
