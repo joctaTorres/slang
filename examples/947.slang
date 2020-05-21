@@ -1,4 +1,5 @@
-//** ANTES era: program x (x); **//
+
+// ANTES era: program x (x); //
 declare x (x);
 
 type
