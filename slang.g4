@@ -405,7 +405,7 @@ ifStatement
    ;
 
 caseStatement
-   : CASE expression OF caseListElement (SEMI caseListElement)* (SEMI ELSE statements)? FINISH
+   : CASE LPAREN expression RPAREN OF caseListElement (SEMI caseListElement)* (SEMI ELSE statements)? FINISH
    ;
 
 caseListElement
