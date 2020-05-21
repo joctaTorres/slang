@@ -5,7 +5,7 @@ program
    ;
 
 programHeading
-   : PROGRAM identifier (LPAREN identifierList RPAREN)? SEMI
+   : DECLARE identifier (LPAREN identifierList RPAREN)? SEMI
    | UNIT identifier SEMI
    ;
 
@@ -721,8 +721,8 @@ PROCEDURE
    ;
 
 
-PROGRAM
-   : P R O G R A M
+DECLARE
+   : D E C L A R E
    ;
 
 

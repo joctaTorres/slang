@@ -2,7 +2,7 @@
  * A simple bubble sort program.  Reads integers, one per line, and prints   *
  * them out in sorted order.  Blows up if there are more than 49.            *
  *****************************************************************************)
-PROGRAM Sort(input, output);
+declare Sort(input, output);
     CONST
         (* Max array size. *)
         MaxElts = 50;

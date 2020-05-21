@@ -1,4 +1,4 @@
-program caseRepeat(input, output);
+declare caseRepeat(input, output);
 
 (*** Demonstrate the repeat and case statements.  ***)
 

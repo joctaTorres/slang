@@ -1,4 +1,4 @@
-program x (x);
+declare x (x);
 
 type
   T = record finish;

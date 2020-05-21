@@ -1,4 +1,4 @@
-program array2(input,output);
+declare array2(input,output);
 
 type
   array1dim = array ['a'..'e'] of integer;

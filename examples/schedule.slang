@@ -1,4 +1,4 @@
-PROGRAM a1 (input,output);
+declare a1 (input,output);
     USES dayio;
 
     CONST 

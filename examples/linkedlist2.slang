@@ -1,4 +1,4 @@
-program linkedlist2(input,output);
+declare linkedlist2(input,output);
 
 (*  Example linked list Pascal Program                          *)
 (*                                                              *)

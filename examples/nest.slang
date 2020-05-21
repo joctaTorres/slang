@@ -1,4 +1,4 @@
-program nesting(input, output);
+declare nesting(input, output);
 
 (*** Demonstrate nesting of procedures.  ***)
 

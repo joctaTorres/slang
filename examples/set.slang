@@ -1,4 +1,4 @@
-program setstuff(input, output);
+declare setstuff(input, output);
 
 (*** Demonstrate the set datatype. ***)
 (* You are only responsible for sets of integers              *)

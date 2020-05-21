@@ -1,4 +1,4 @@
-Program PassOrFailSystem;
+declare PassOrFailSystem;
 
 Var
 

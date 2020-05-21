@@ -1,4 +1,4 @@
-program arrayprog(input,output);
+declare arrayprog(input,output);
 
 (*** Demonstrate array usage. ***)
 

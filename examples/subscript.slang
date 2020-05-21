@@ -1,4 +1,4 @@
-program subscripts(input, output);
+declare subscripts(input, output);
 
 (*** Demonstrate arrays differently subscripted.  ***)
 

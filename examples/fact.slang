@@ -1,4 +1,4 @@
-program factorial(input,output);
+declare factorial(input,output);
 
 const
   number = 5;

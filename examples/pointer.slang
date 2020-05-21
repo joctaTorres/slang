@@ -1,4 +1,4 @@
-program pointer(input,output);
+declare pointer(input,output);
 
 (* types *)
 type

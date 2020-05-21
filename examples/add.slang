@@ -1,4 +1,4 @@
-program add(input, output);
+declare add(input, output);
 
 (*** Simple program to add 2 integer arrays element by element.  ***)
 
