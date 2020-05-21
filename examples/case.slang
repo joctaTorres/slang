@@ -1,6 +1,6 @@
 declare caseRepeat(input, output);
 
-(*** Demonstrate the repeat and case statements.  ***)
+//** Demonstrate the repeat and case statements.  **//
 
 var
    number: integer;
@@ -10,7 +10,7 @@ start
      writeln('Enter year number, between 1 and 5, negative number to finish:');
      read(number);
      if (number >= 1) and (number <= 5) then start
-      case (number) of {
+      case (number) of
         1: writeln('First year student');
         2: writeln('Sophomore');
         3: writeln('Junior');
@@ -20,6 +20,6 @@ start
              writeln('Graduate student???');
             finish
       finish
-    finish }
+    finish
   until number < 0
 finish.

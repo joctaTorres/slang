@@ -1,6 +1,6 @@
 declare arrayprog(input,output);
 
-(*** Demonstrate array usage. ***)
+//** Demonstrate array usage. **//
 
 type
       array1D = array [1..5] of integer;

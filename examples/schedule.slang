@@ -26,10 +26,10 @@ declare a1 (input,output);
         { HourScanType = FirstHour..PastLastHour; }
         HourScanType = 8..18;
 
-    (***********************************************************************
+    //**********************************************************************
      * Procedure to read the next non-blank.  It skips leading blanks, then
      * reads the string up to the first blank or eoln.
-     ***********************************************************************)
+     **********************************************************************//
     PROCEDURE ReadString(VAR Str: string);
         VAR
             Ch: char;
@@ -57,7 +57,7 @@ declare a1 (input,output);
                 FINISH
         FINISH; { ReadString }
 
-    (***********************************************************************
+    //**********************************************************************
      * Procedure to read the arguments held in common by the sched 
      * clear commands.  Returns them through the arguments.  If there
      * is some error, that is reported through the argument error.
@@ -73,7 +73,7 @@ declare a1 (input,output);
      *    discarded, and Error is set to true.  If there is extra information
      *    on the line, it is discared.  The read pointer is left at the start
      *    of the following line.
-     ***********************************************************************)
+     **********************************************************************//
     PROCEDURE ReadSchedClrArgs(
             VAR StartDay, FINISHDay: DayType;      { Input days. }
             VAR StartHour, FINISHHour: HourType;   { Input hour range. }
@@ -111,10 +111,10 @@ declare a1 (input,output);
                     Error := FALSE 
                 FINISH
             ELSE
-                (* Something went wrong, seriously wrong. *)
+                // Something went wrong, seriously wrong. //
                 Error := TRUE;
 
-            (* We're done with this line. *)
+            // We're done with this line. //
             readln
         FINISH; { ReadSchedClrArgs }
 

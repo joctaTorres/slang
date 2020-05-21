@@ -6,7 +6,7 @@ const
 var
   result: integer;
 
-(* demonstrate that a function name is how a function returns its value *)
+// demonstrate that a function name is how a function returns its value //
 
 function fact(n: integer): integer;
 var
@@ -21,7 +21,7 @@ start
       fact := answer;
 finish;
 
-start                (* main program *)
+start                // main program //
    result := fact(number);
    writeln('Factorial of ', number, ' is ', result);
 finish.

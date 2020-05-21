@@ -8,10 +8,10 @@ var
   i: char;
   n: integer;
 
-(******************************* main **********************************)
+//****************************** main *********************************//
 start
    n := 0;
-   (* loop to show you can use chars to index arrays *)
+   // loop to show you can use chars to index arrays //
    for i := 'a' to 'e' do
    start
       n := n + 5;

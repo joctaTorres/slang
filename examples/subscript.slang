@@ -1,6 +1,6 @@
 declare subscripts(input, output);
 
-(*** Demonstrate arrays differently subscripted.  ***)
+//** Demonstrate arrays differently subscripted.  **//
 
 const
   startSubscript = 5;
@@ -10,7 +10,7 @@ var
    i,j,k: integer;
    a: array [startSubscript .. endSubscript] of integer;
 
-(* **************************    main      ********************************** *)
+// **************************    main      ********************************** //
 
 start
   for i := startSubscript to endSubscript do

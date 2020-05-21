@@ -1,11 +1,11 @@
 declare ifprog(input, output);
 
-(*** Demonstrate the if.  ***)
+//** Demonstrate the if.  **//
 
 var
    number: integer;
 
-(* **************************    main      ********************************** *)
+// **************************    main      ********************************** //
 
 start
   writeln('Please enter an integer between 0 and 100');

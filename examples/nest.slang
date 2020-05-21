@@ -1,11 +1,11 @@
 declare nesting(input, output);
 
-(*** Demonstrate nesting of procedures.  ***)
+//** Demonstrate nesting of procedures.  **//
 
 var
    i,j,k: integer;
 
-(* ***************************    procA    ********************************** *)
+// ***************************    procA    ********************************** //
 
 procedure procA;
 
@@ -40,7 +40,7 @@ start
    procA3;
 finish;
 
-(* ***************************    procB    ********************************** *)
+// ***************************    procB    ********************************** //
 
 procedure procB;
 
@@ -53,7 +53,7 @@ start
    writeln('i=', i, '  j=', j, '  k=', k);
 finish;
 
-(* **************************    main      ********************************** *)
+// **************************    main      ********************************** //
 
 start
    writeln('in main');

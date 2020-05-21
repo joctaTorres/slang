@@ -1,14 +1,14 @@
 declare linkedlist2(input,output);
 
-(*  Example linked list Pascal Program                          *)
-(*                                                              *)
-(*  The file list.data would be used as the data file.          *)
-(*  If there was an executable, a.out, run:  a.out < list.data  *)
+//  Example linked list Pascal Program                          //
+//                                                              //
+//  The file list.data would be used as the data file.          //
+//  If there was an executable, a.out, run:  a.out < list.data  //
 
 const
-  grades = 5;                             (* number of grades to be averaged *)
-  avgPosition = 6;                        (* position of grade average *)
-  size = 4;                               (* number of students *)
+  grades = 5;                             // number of grades to be averaged //
+  avgPosition = 6;                        // position of grade average //
+  size = 4;                               // number of students //
 
 type
   integerArray = array [1..avgPosition] of integer;
@@ -24,9 +24,9 @@ var
   list, newrec: cellPtr;
   count, classNum: integer;
 
-(* ************************************************************************* *)
-(* procedure insert                                                          *)
-(* ************************************************************************* *)
+// ************************************************************************* //
+// procedure insert                                                          //
+// ************************************************************************* //
 
 procedure insert(var list: cellPtr; newrec: cellPtr);
 var
@@ -38,7 +38,7 @@ start
     found := false;
     if (list = nil) then
       start
-        newrec^.next := list;               (* fix bug so next is set to nil *)
+        newrec^.next := list;               // fix bug so next is set to nil //
         list := newrec;
       finish
     else if (newrec^.id < list^.id) then
@@ -52,7 +52,7 @@ start
           start
             if (current^.next = nil) then
               start
-                newrec^.next := nil;        (* fix bug so next is set to nil *)
+                newrec^.next := nil;        // fix bug so next is set to nil //
                 current^.next := newrec;
                 found := true;
               finish
@@ -67,9 +67,9 @@ start
       finish;
 finish;
 
-(* ************************************************************************* *)
-(* function average                                                          *)
-(* ************************************************************************* *)
+// ************************************************************************* //
+// function average                                                          //
+// ************************************************************************* //
 
 function average(newrec: cellPtr): integer;
 var
@@ -82,9 +82,9 @@ start
     average:=sum div grades;
 finish;
 
-(* ************************************************************************* *)
-(* procedure makeNewrec                                                      *)
-(* ************************************************************************* *)
+// ************************************************************************* //
+// procedure makeNewrec                                                      //
+// ************************************************************************* //
 
 procedure makeNewrec(var newrec : cellPtr);
 var
@@ -98,9 +98,9 @@ start
     newrec^.info[avgPosition] := average(newrec);
 finish;
 
-(* ************************************************************************* *)
-(* procedure displayInfo                                                     *)
-(* ************************************************************************* *)
+// ************************************************************************* //
+// procedure displayInfo                                                     //
+// ************************************************************************* //
 
 procedure displayInfo(var list : cellPtr);
 var
@@ -134,9 +134,9 @@ start
     finish;
 finish;
 
-(* ************************************************************************* *)
-(* procedure cleanup                                                         *)
-(* ************************************************************************* *)
+// ************************************************************************* //
+// procedure cleanup                                                         //
+// ************************************************************************* //
 
 procedure cleanup(var list : cellPtr);
 var
@@ -152,9 +152,9 @@ start
    finish;
    current := nil
 finish;
-(* ************************************************************************** *)
-(* main program                                                               *)
-(* ************************************************************************** *)
+// ************************************************************************** //
+// main program                                                               //
+// ************************************************************************** //
 
 start
   read(classNum);

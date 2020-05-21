@@ -1,6 +1,6 @@
 declare pointer(input,output);
 
-(* types *)
+// types //
 type
   integerArray = array [1..10] of integer;
 
@@ -11,13 +11,13 @@ type
      next: cellPtr
   finish;
 
-(* vars *)
+// vars //
 var
   list, newrec: cellPtr;
   mycount, classNum: integer;
   pointer1: ^integer;
   pointer2: ^integerArray;
 
-(* main program *)
+// main program //
 start
 finish.
