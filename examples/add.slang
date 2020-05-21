@@ -1,10 +1,6 @@
 declare add(input, output);
 
-//** esse exemplo adiciona 2 arrays de int  **//
-
-//** ANTES os loops "for" eram assim: for i := 1 to size do  **//
-//** AGORA os loops "for" são assim: for (i := 1 to size) do  **//
-//** Além da mudanças na declação de begin ... end para start ...finish **//
+//** Simple program to add 2 integer arrays element by element.  **//
 
 const
   size = 5;
